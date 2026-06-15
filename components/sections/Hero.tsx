@@ -15,21 +15,21 @@ import {
 const stats = [
   {
     icon: RiBriefcaseLine,
-    value: "4+",
+    value: "1",
     label: "Years Experience",
-    sub: "In the IT Industry",
+    sub: "Professional Development",
   },
   {
     icon: RiCodeSSlashLine,
-    value: "20+",
+    value: "3",
     label: "Projects Completed",
-    sub: "End-to-end delivery",
+    sub: "Delivered Successfully",
   },
   {
     icon: RiTeamLine,
-    value: "10+",
-    label: "Happy Clients",
-    sub: "Long-term relationships",
+    value: "30+",
+    label: "Total Skills",
+    sub: "And Growing Daily",
   },
   {
     icon: RiStackLine,
@@ -50,7 +50,7 @@ export function Hero() {
   return (
     <section
       id="about"
-      className="relative bg-background text-foreground py-20 md:py-28 overflow-hidden min-h-screen flex items-center"
+      className="relative bg-background text-foreground py-8 md:py-12 overflow-hidden min-h-[75vh] flex items-center"
     >
       {/* Grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
@@ -65,7 +65,7 @@ export function Hero() {
       <div className="absolute bottom-36 left-1/4 w-1.5 h-1.5 bg-primary/30 rounded-full animate-pulse pointer-events-none" style={{ animationDelay: "2s" }} />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full">
-        <div className="flex flex-col items-center text-center space-y-6">
+        <div className="flex flex-col items-center text-center space-y-4">
           {/* Badge */}
           <div className="section-badge animate-fade-in-up">
             <span className="relative flex h-2 w-2 mr-2">

@@ -1,15 +1,12 @@
 import { RiGithubFill, RiExternalLinkLine } from "react-icons/ri";
+import Image from "next/image";
 
 const projects = [
   {
-    title: "Riva Agro Exports Website",
+    title: "Riva Agro Exports",
+    image: "/projects/riva-agro.png",
     description:
-      "A complete business website for an agro export company, featuring a professional public-facing site and a fully-featured admin panel. Built product management with full CRUD operations and scalable architecture using Next.js API routes.",
-    bullets: [
-      "Developed complete business website with admin panel",
-      "Implemented product management with full CRUD operations",
-      "Built scalable architecture using Next.js API routes",
-    ],
+      "Developed complete business website with admin panel. Implemented product management with full CRUD operations and built a scalable architecture using Next.js API routes.",
     tech: ["Next.js", "MongoDB Atlas", "Tailwind CSS", "Redux"],
     github: "https://github.com/renukagite23",
     live: "https://rivaagrowexport.com",
@@ -18,14 +15,9 @@ const projects = [
   },
   {
     title: "Paarsh E-Learning Platform",
+    image: "/projects/paarsh-elearning.png",
     description:
-      "A full-stack e-learning platform with a student-facing dashboard and a comprehensive admin panel. Students can view courses, track progress, and access user-specific data. Admins manage courses, workshops, and user enquiries.",
-    bullets: [
-      "Developed full-stack e-learning platform with student dashboard and admin panel",
-      "Admin panel manages courses, workshops, and user enquiries",
-      "Student dashboard displays courses, progress, and user-specific data",
-      "Implemented API integration and structured component architecture",
-    ],
+      "Developed a full-stack e-learning platform with a student dashboard and admin panel. The admin panel manages courses, workshops, and user enquiries, while the student dashboard displays courses, progress, and user-specific data. Implemented API integration and structured component architecture.",
     tech: ["Next.js", "MongoDB Atlas", "Tailwind CSS", "Redux"],
     github: "https://github.com/renukagite23",
     live: "https://paarshelearning.com",
@@ -34,14 +26,9 @@ const projects = [
   },
   {
     title: "Temple Trust Management System",
+    image: "/projects/temple-trust.png",
     description:
-      "A full-stack multilingual temple trust website with a professional admin panel. Features donation management, report generation, trustee management, and dynamic content sections for events, gallery, president messages, and temple trust information.",
-    bullets: [
-      "Developed a full-stack multilingual temple trust website with a professional admin panel",
-      "Built donation management, report generation, trustee management, and content management modules",
-      "Implemented role-based admin functionality with CRUD operations and secure API integration",
-      "Developed dynamic sections for events, gallery, president messages, and temple trust information",
-    ],
+      "Developed a full-stack multilingual temple trust website with a professional admin panel. Built modules for donation management, report generation, trustee management, and content management. Implemented role-based admin functionality with CRUD operations and secure API integration, alongside dynamic sections for events, gallery, and temple information.",
     tech: ["Next.js", "MongoDB Atlas", "Tailwind CSS", "Redux Toolkit"],
     github: "https://github.com/renukagite23",
     live: "https://kulachar-nidhi.vercel.app/",
@@ -54,7 +41,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-24 bg-background"
+      className="py-24 bg-background pt-10"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
@@ -75,26 +62,36 @@ export function Projects() {
         </div>
 
         {/* Projects list */}
-        <div className="grid gap-20">
+        <div className="grid gap-16">
           {projects.map((project, i) => (
             <div
               key={i}
-              className={`group relative grid gap-8 md:grid-cols-2 items-center ${
-                i % 2 === 1 ? "md:[&>*:first-child]:order-last" : ""
-              }`}
+              className={`group relative grid gap-8 md:grid-cols-2 items-center ${i % 2 === 1 ? "md:[&>*:first-child]:order-last" : ""
+                }`}
             >
               {/* Visual Card */}
-              <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center group-hover:border-primary/40 transition-all duration-300 shadow-sm group-hover:shadow-xl">
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-70`} />
-                {/* Grid texture */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808010_1px,transparent_1px),linear-gradient(to_bottom,#80808010_1px,transparent_1px)] bg-[size:20px_20px]" />
-                {/* Project number watermark */}
-                <div className="relative z-10 text-center select-none px-6">
-                  <p className="text-8xl font-black text-foreground/5">{project.num}</p>
-                  <p className="text-base font-bold text-foreground/30 mt-1">{project.title}</p>
+              {/* Project Thumbnail */}
+              <div className="group relative overflow-hidden rounded-2xl border border-border shadow-lg">
+                <div className="relative aspect-video">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2.5 bg-white text-black rounded-lg font-semibold"
+                    >
+                      View Live Demo
+                    </a>
+                  </div>
                 </div>
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Content */}
@@ -107,20 +104,9 @@ export function Projects() {
                     {project.title}
                   </h3>
                 </div>
-
                 <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                   {project.description}
                 </p>
-
-                {/* Bullet points */}
-                <ul className="space-y-1.5">
-                  {project.bullets.map((b, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className="text-primary font-bold shrink-0 mt-0.5">›</span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
 
                 {/* Tech tags */}
                 <div className="flex flex-wrap gap-2">

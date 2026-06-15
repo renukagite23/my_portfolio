@@ -3,13 +3,13 @@ import { RiBuilding2Line, RiCalendarLine, RiMapPinLine, RiArrowRightUpLine } fro
 const experiences = [
   {
     company: "Paarsh Infotech Pvt Ltd",
-    role: "Full Stack Developer Intern",
-    type: "Internship",
+    role: "Full Stack Developer",
+    type: "Full Time",
     location: "Nashik, Maharashtra",
     start: "Nov 2025",
     end: "Present",
     description:
-      "Full stack developer intern building modern web applications using Next.js and the MERN stack. Responsible for developing admin panels, student dashboards, REST APIs, and database-driven systems.",
+      "Full stack developer building modern web applications using Next.js and the MERN stack. Responsible for developing admin panels, student dashboards, REST APIs, and database-driven systems.",
     responsibilities: [
       "Developing full stack web applications using Next.js and MongoDB",
       "Building admin panels with authentication and role-based access",
@@ -55,7 +55,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="py-24 bg-gradient-to-b from-background via-background to-muted/50 dark:from-background dark:via-background/80 dark:to-muted/20"
+      className="py-18 bg-gradient-to-b from-background via-background to-muted/50 dark:from-background dark:via-background/80 dark:to-muted/20"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Section header */}

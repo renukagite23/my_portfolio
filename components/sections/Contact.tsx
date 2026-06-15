@@ -103,7 +103,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-muted/50 dark:bg-muted/20">
+    <section id="contact" className="py-24 bg-muted/50 dark:bg-muted/20 pt-6">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
         <div className="mb-16 text-center">
