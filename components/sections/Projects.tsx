@@ -1,3 +1,5 @@
+"use client";
+
 import { RiGithubFill, RiExternalLinkLine } from "react-icons/ri";
 import Image from "next/image";
 
@@ -71,29 +73,39 @@ export function Projects() {
             >
               {/* Visual Card */}
               {/* Project Thumbnail */}
-              <div className="group relative overflow-hidden rounded-2xl border border-border shadow-lg">
-                <div className="relative aspect-video">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+              {/* <a
+                href={project.image}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-2xl border border-border shadow-lg block"
+              >
+                <div className="group relative overflow-hidden rounded-2xl border border-border shadow-lg">
+                  <div className="relative aspect-video">
+                    <iframe
+                      src={project.live}
+                      title={project.title}
+                      className="absolute inset-0 w-full h-full border-0"
+                      loading="lazy"
+                    />
+                  </div>
 
-                  {/* Overlay */}
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-5 py-2.5 bg-white text-black rounded-lg font-semibold"
-                    >
-                      View Live Demo
-                    </a>
+                    <div className="px-5 py-2.5 bg-white text-black rounded-lg font-semibold">
+                      Click to Preview
+                    </div>
                   </div>
                 </div>
+              </a> */}
+              <div className="group relative overflow-hidden rounded-2xl border border-border shadow-lg">
+                <div className="relative aspect-video">
+                  <iframe
+                    src={project.live}
+                    title={project.title}
+                    className="absolute inset-0 w-full h-full border-0"
+                    loading="lazy"
+                  />
+                </div>
               </div>
-
               {/* Content */}
               <div className="flex flex-col justify-center space-y-5">
                 <div>
