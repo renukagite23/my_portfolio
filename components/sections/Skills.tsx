@@ -16,7 +16,7 @@ const skillCategories = [
     color: "text-green-500",
     bg: "bg-green-500/10",
     border: "border-green-500/20",
-    skills: ["Next.js", "Flask", "Node.js", "NPM", "Express.js", "VPS", "Git", "GitHub"],
+    skills: ["Next.js", "Node.js", "NPM", "Express.js", "VPS", "Git", "GitHub"],
   },
   {
     title: "Frontend",
